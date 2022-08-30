@@ -1,0 +1,92 @@
+---
+import Layout from '../layouts/Layout.astro';
+import type Project from '../models/Project'
+import Tile from '../components/Tile.astro';
+
+const projects:Project[] = [
+	{
+		title: "P1",
+		route: '/',
+		type: 'Web'
+	},
+	{
+		title: "P2",
+		route: '/',
+		type: 'HTML'
+	}, 
+	{
+		title: "P3",
+		route: '/',
+		type: 'Mobile'
+	}, 
+	{
+		title: "P4",
+		route: '/',
+		type: 'Web'
+	}, 
+	{
+		title: "P5",
+		route: '/',
+		type: 'Back'
+	}
+]
+---
+
+<Layout title="Sam Steinberg">
+	<main>
+		<h1 class="text-center">Hi, I'm Sam. Welcome to my site.</h1>
+		<div role="list" class="link-card-grid">
+			{
+				projects.map((project:Project) => <Tile title={project.title} route={project.route} type={project.type} />)
+			}
+		</div>
+	</main>
+</Layout>
+
+<style>
+	:root {
+		--astro-gradient: linear-gradient(0deg, #4f39fa, #da62c4);
+	}
+
+	h1 {
+		margin: 2rem 0;
+	}
+
+	.text-center { text-align: center; }
+
+	main {
+		margin: auto;
+		padding: 1em;
+		max-width: 1200px;
+	}
+
+	.text-gradient {
+		font-weight: 900;
+		background-image: var(--astro-gradient);
+		-webkit-background-clip: text;
+		-webkit-text-fill-color: transparent;
+		background-size: 100% 200%;
+		background-position-y: 100%;
+		border-radius: 0.4rem;
+		animation: pulse 4s ease-in-out infinite;
+	}
+
+	@keyframes pulse {
+		0%,
+		100% {
+			background-position-y: 0%;
+		}
+		50% {
+			background-position-y: 80%;
+		}
+	}
+
+	.link-card-grid {
+		display: flex;
+		flex-wrap: wrap;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		padding: 0
+	}
+</style>
