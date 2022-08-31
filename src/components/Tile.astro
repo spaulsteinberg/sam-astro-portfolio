@@ -1,14 +1,14 @@
 ---
+import type Project from '../models/Project';
+
 export interface Props {
-	title: string;
-	type: string;
-	route: string;
+	project:Project
 }
 
-const { title, type, route } = Astro.props;
+const { project: { title, route, type, colorClass} } = Astro.props;
 ---
 
-<div class="link-tile">
+<div class={`link-tile ${colorClass}`}>
 	<a href={route}>
 		<p>
 			{type}
@@ -25,13 +25,35 @@ const { title, type, route } = Astro.props;
 		display: flex;
         flex-direction: column;
 		padding: 0.15rem;
-		background-image: linear-gradient(0deg, #4f39fa, #da62c4);;
 		background-size: 400%;
 		border-radius: 0.5rem;
 		background-position: 100%;
 		margin-top: 2rem;
         height: 400px;
-        width: 100%;
+        width: 99%;
+	}
+
+	.tile-purple-pink {
+		background-image: linear-gradient(0deg, #4f39fa, #da62c4);
+	}
+
+	.tile-blue-teal {
+		background-color: #0093E9;
+		background-image: linear-gradient(160deg, #0093E9 0%, #80D0C7 100%);
+	}
+
+	.tile-yellow-pink {
+		background-image: linear-gradient(0deg, #4f39fa, #da62c4);
+	}
+
+	.tile-blue-pink {
+		background-color: #00DBDE;
+		background-image: linear-gradient(90deg, #00DBDE 0%, #FC00FF 100%);
+	}
+
+	.tile-lightblue-pink {
+		background-color: #A9C9FF;
+		background-image: linear-gradient(180deg, #A9C9FF 0%, #FFBBEC 100%);
 	}
 
 	h2 {

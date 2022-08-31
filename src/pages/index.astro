@@ -7,39 +7,58 @@ const projects:Project[] = [
 	{
 		title: "P1",
 		route: '/',
-		type: 'Web'
+		type: 'Web',
+		colorClass: 'tile-purple-pink'
 	},
 	{
 		title: "P2",
 		route: '/',
-		type: 'HTML'
+		type: 'HTML',
+		colorClass: 'tile-blue-teal'
 	}, 
 	{
 		title: "P3",
 		route: '/',
-		type: 'Mobile'
+		type: 'Mobile',
+		colorClass: 'tile-yellow-pink'
 	}, 
 	{
 		title: "P4",
 		route: '/',
-		type: 'Web'
+		type: 'Web',
+		colorClass: 'tile-blue-pink'
 	}, 
 	{
 		title: "P5",
 		route: '/',
-		type: 'Back'
+		type: 'Back',
+		colorClass: 'tile-lightblue-pink'
 	}
 ]
 ---
 
 <Layout title="Sam Steinberg">
 	<main>
-		<h1 class="text-center">Hi, I'm Sam. Welcome to my site.</h1>
-		<div role="list" class="link-card-grid">
-			{
-				projects.map((project:Project) => <Tile title={project.title} route={project.route} type={project.type} />)
-			}
+		<div class="container">
+			<div class="header">
+				<h1 class="text-center">Hi, I'm Sam. Welcome to my site.</h1>
+				<div class="subheader-container subheader text-center">
+					<p>
+						I am a full-stack developer based in Austin, TX.
+						My portfolio has basic CSS animations to modern web frameworks, and mobile apps.
+						Check out my projects by selecting from the tiles.
+					</p>
+				</div>
+			</div>
+			<div class="img-container">
+				<img src="/astronaut-svgrepo-com.svg" alt="spaceshit.jpg" class="img-dimensions" />
+			</div>
 		</div>
+		<section id="tiles" class="link-card-grid">
+			{
+				projects.map((project:Project) => <Tile project={project} />)
+			}
+		</section>
 	</main>
 </Layout>
 
@@ -48,16 +67,53 @@ const projects:Project[] = [
 		--astro-gradient: linear-gradient(0deg, #4f39fa, #da62c4);
 	}
 
+	.container {
+		width:100%;
+		color:white;
+		background-color: #0f172ae6;
+	}
+
+	.img-container {
+		display: flex;
+		padding: 1rem;
+		padding-bottom: 3rem;
+		align-items: center;
+		justify-content: center;
+	}
+
+	.img-dimensions {
+		height: auto;
+		width: 250px
+	}
+
+	.header {
+		color: white;
+		max-width: 1100px;
+    	margin: 0 auto;
+		padding: 1rem;
+	}
+
+	.subheader-container {
+		max-width: 500px;
+		margin: 0 auto;
+	}
+
+	.subheader {
+		color: #94a3b8
+	}
+
 	h1 {
-		margin: 2rem 0;
+		margin-top: 2rem;
+		margin-bottom: 0;
 	}
 
 	.text-center { text-align: center; }
 
-	main {
+	section {
 		margin: auto;
 		padding: 1em;
 		max-width: 1200px;
+		padding: 1rem;
 	}
 
 	.text-gradient {
@@ -87,6 +143,31 @@ const projects:Project[] = [
 		flex-direction: column;
 		justify-content: center;
 		align-items: center;
-		padding: 0
+	}
+
+	@media screen and (min-width: 500px) {
+		.img-dimensions {
+			height: auto;
+			width: 350px
+		}
+	}
+
+	@media screen and (min-width: 768px) {
+		.subheader-container {
+			max-width: 700px;
+		}
+	}
+
+	@media screen and (min-width: 992px) {
+		h1 {
+			font-size: 3.5rem !important;
+		}
+		.img-dimensions {
+			height: auto;
+			width: 500px
+		}
+		.container {
+			min-height: 100vh;
+		}
 	}
 </style>
