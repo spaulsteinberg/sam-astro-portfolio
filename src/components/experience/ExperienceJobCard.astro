@@ -1,0 +1,86 @@
+---
+import Pill from "../utility/Pill.astro";
+import type ExperienceJob from '../../models/ExperienceJob'
+
+export interface Props {
+    job:ExperienceJob
+}
+
+const { job: { image, description, pills }} = Astro.props
+
+---
+
+<div class="card">
+    <div class="img-container">
+        <img src={image.srcPath} alt={image.altText} width="100%"  />
+    </div>
+    <div class="description-container">
+        <div>
+            <p class="no-margin">
+                { description }
+            </p>
+        </div>
+        <div>
+            {pills.map((pill:string) => <Pill title={pill} />)}
+        </div>
+    </div>
+</div>
+
+<style>
+    .card {
+        height: 400px;
+        width: 100%;
+        max-width: 300px;
+        border: 1px solid #0f172ae6;;
+        border-radius: 10px;
+        overflow: hidden;
+        background-image: linear-gradient(180deg, #FFEFBA 0%, #fff 100%);
+        color: black;
+        display: flex;
+        flex-direction: column;
+        margin: 1rem 0
+    }
+
+    .img-container, .description-container {  
+        padding: 1rem 1rem 0;
+    }
+
+    .img-container {
+        height: 25%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .no-margin { margin: 0; margin-bottom: 1rem; }
+
+    .description-container {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        height: 50%;
+        flex-grow: 1;
+    }
+
+    @media screen and (min-width: 500px) {
+    }
+
+    @media screen and (min-width: 768px) {
+        .card {
+            width: 45%;
+            margin: 1rem;
+            max-width: 350px;
+        }
+        .img-container {
+            height: 30%;
+        }
+    }
+
+    @media screen and (min-width: 1200px) {
+        .card {
+            height: 500px;
+        }
+    }
+
+</style>

@@ -1,0 +1,86 @@
+---
+import type ExperienceTimelineElement from "../../models/ExperienceTimelineElement";
+import ExperienceTimelineItem from "./ExperienceTimelineItem.astro";
+
+export interface Props {
+  timelineItems: ExperienceTimelineElement[];
+}
+
+const { timelineItems } = Astro.props;
+---
+
+<div class="experience-grid">
+  <div class="grid-col ibm-experience-col">
+    <ExperienceTimelineItem experience={timelineItems[0]} />
+  </div>
+  <div class="grid-col schwab-experience-col">
+    <ExperienceTimelineItem experience={timelineItems[1]} />
+  </div>
+  <div class="grid-col school-experience-col">
+    <ExperienceTimelineItem experience={timelineItems[2]} />
+  </div>
+</div>
+
+<style>
+  .experience-grid {
+    display: grid;
+    grid-template-rows: repeat(4, 100px);
+    grid-template-columns: repeat(4, 1fr);
+    row-gap: 10px;
+    column-gap: 10px;
+    padding: 0 1rem;
+  }
+
+  .grid-col {
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  .school-experience-col {
+    grid-row-start: 3;
+    grid-column-start: 1;
+    grid-column-end: 5;
+    background-image: linear-gradient(0deg, #4f39fa, #da62c4);
+  }
+
+  .schwab-experience-col {
+    grid-row-start: 2;
+    grid-column-start: 1;
+    grid-column-end: 5;
+    background-image: linear-gradient(180deg, #a9c9ff 0%, #ffbbec 100%);
+  }
+
+  .ibm-experience-col {
+    grid-row-start: 1;
+    grid-column-start: 1;
+    grid-column-end: 5;
+    background-image: linear-gradient(160deg, #0093e9 0%, #80d0c7 100%);
+  }
+
+  @media screen and (min-width: 768px) {
+    .grid-col:hover {
+      transform: translate3d(0, -5px, 0);
+      cursor: pointer;
+    }
+  }
+
+  @media screen and (min-width: 992px) {
+    .school-experience-col {
+      grid-column-start: 1;
+      grid-column-end: 3;
+    }
+
+    .schwab-experience-col {
+      grid-column-start: 3;
+      grid-column-end: 4;
+    }
+
+    .ibm-experience-col {
+      grid-column-start: 4;
+    }
+  }
+</style>

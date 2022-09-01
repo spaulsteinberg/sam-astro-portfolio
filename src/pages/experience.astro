@@ -1,0 +1,121 @@
+---
+import ExperienceGrid from "../components/experience/ExperienceGrid.astro";
+import ExperienceJobCard from "../components/experience/ExperienceJobCard.astro";
+import ExperienceTimelineItem from "../components/experience/ExperienceTimelineItem.astro";
+import Layout from "../layouts/Layout.astro";
+import type ExperienceJob from "../models/ExperienceJob";
+import type ExperienceTimelineElement from "../models/ExperienceTimelineElement";
+
+const timelineItems: ExperienceTimelineElement[] = [
+  {
+    place: "IBM",
+    role: "Full Stack",
+    yearsPresent: ["21", ""],
+  },
+  {
+    place: "Charles Schwab",
+    role: "Full Stack",
+    yearsPresent: ["20", "21"],
+  },
+  {
+    place: "School and Internships",
+    role: "Student/Intern",
+    yearsPresent: ["16", "20"],
+  },
+];
+
+const jobs:ExperienceJob[] = [
+    {
+        image: {
+            srcPath: '/company/IBM_logo.svg',
+            altText: 'ibm.svg'
+        },
+        description: 'Developing next generation Early Programs Admin Tool to help clients outreach and feedback programs.',
+        pills: ['React.js', 'JavaScript', 'MongoDB', 'Docker', 'Java', 'Spring', 'SCSS']
+    },
+    {
+        image: {
+            srcPath: '/company/charles-schwab-logo-2.png',
+            altText: 'ibm.svg'
+        },
+        description: 'Develivered notifications, notifications api, dashboard applications, and transfer of assets requests for service advisors.',
+        pills: ['Angular', 'TypeScript', 'C#', 'MongoDB', 'RabbitMQ', 'HTML', 'LESS']
+    },
+    {
+        image: {
+            srcPath: '/company/ATT_logo_2016.svg',
+            altText: 'att.svg'
+        },
+        description: 'Wrote scripts to automate service tickets, ensure database integrity, and scrape Excel sheets.',
+        pills: ['Python', 'Selenium', 'PyQt', 'SQL', 'GUI Development']
+    },
+]
+---
+
+<Layout title="Experience">
+  <main>
+    <div class="header">
+      <h1 class="text-center">Experience</h1>
+      <section>
+        <ExperienceGrid timelineItems={timelineItems} />
+      </section>
+    </div>
+    <section class="card-section">
+      {
+        jobs.map((job:ExperienceJob) => <ExperienceJobCard job={job} />)
+      }
+    </section>
+    <section>
+      Explain school b.s. degree, etc. 
+      resume download
+    </section>
+  </main>
+</Layout>
+
+<style>
+  .card-section {
+    padding: 0 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+
+  main {
+    width: 100%;
+    color: white;
+  }
+
+  .img {
+    max-width: 500px;
+    height: auto;
+  }
+
+  .work-item-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    height: 210px;
+  }
+
+  .header {
+    background-color: #0f172ae6;
+  }
+
+  section {
+    max-width: 1200px;
+    margin: 4rem auto 2rem;
+  }
+
+  h1 {
+    padding-top: 2rem;
+    margin: 0;
+  }
+
+  @media screen and (min-width: 768px) {
+    .card-section {
+      flex-direction: row;
+    }
+  }
+</style>

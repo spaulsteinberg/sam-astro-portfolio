@@ -1,0 +1,35 @@
+---
+import type ExperienceTimelineElement from "../../models/ExperienceTimelineElement";
+
+export interface Props {
+  experience: ExperienceTimelineElement;
+}
+
+const {
+  experience: { place, role, yearsPresent },
+} = Astro.props;
+---
+
+<div class="place-role-container">
+  <p>{place}</p>
+  <span>{role}</span>
+</div>
+<div class="years">
+    <span>{yearsPresent[0] + " - " + yearsPresent[1]}</span>
+</div>
+
+<style>
+
+.place-role-container {
+    padding-left: 1rem
+}
+.years {
+    padding-right: 1rem;
+}
+
+p {
+  margin: .25rem 0;
+  font-size: 1.25rem;
+}
+
+</style>
