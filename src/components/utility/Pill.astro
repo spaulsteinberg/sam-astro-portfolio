@@ -1,0 +1,23 @@
+---
+export interface Props {
+    title:string;
+    backgroundColor?:string;
+    textColor?:string;
+}
+
+const { title, backgroundColor = "#4f39fa", textColor = "#fff" } = Astro.props
+---
+
+<div class="pill">{title}</div>
+
+<style define:vars={{ backgroundColor, textColor }}>
+    .pill {
+        display: inline-flex;
+        padding: .25rem 1rem;
+        border-radius: 75px;
+        background-color: var(--backgroundColor);
+        color: var(--textColor);
+        margin-top: .25rem;
+        margin-right: .25rem;
+    }
+</style>
