@@ -26,7 +26,8 @@ const { job: { image, description, pills }} = Astro.props
     </div>
 </div>
 
-<style>
+<style lang="scss">
+    @import '../../styles/abstracts.scss';
     .card {
         height: 450px;
         width: 100%;
@@ -49,24 +50,26 @@ const { job: { image, description, pills }} = Astro.props
     }
 
     .img-container {
-        height: 35%;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
+        @include flex-box(column, wrap, center, center);
+        height: 25%;
     }
 
     .no-margin { margin: 0; margin-bottom: 1rem; }
 
     .description-container {
-        display: flex;
-        flex-direction: column;
-        justify-content: flex-start;
+        @include flex-box(column, nowrap, flex-start, normal);
         height: 50%;
         flex-grow: 1;
     }
 
-    @media screen and (min-width: 500px) {
+    @media screen and (min-width: screen("xs")) {
+        .img-container {
+            height: 35%;
+        }
+        .description-container { justify-content: space-around; }
+    }
+
+    @media screen and (min-width: screen("sm")) {
         .card {
             width: 70%;
             max-width: 350px;
@@ -76,7 +79,7 @@ const { job: { image, description, pills }} = Astro.props
         }
     }
 
-    @media screen and (min-width: 768px) {
+    @media screen and (min-width: screen("md")) {
         .card {
             height: 500px;
             width: 45%;
@@ -87,7 +90,7 @@ const { job: { image, description, pills }} = Astro.props
         }
     }
 
-    @media screen and (min-width: 1200px) {
+    @media screen and (min-width: screen("xl")) {
         .card {
             height: 500px;
         }
