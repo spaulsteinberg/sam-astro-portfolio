@@ -74,15 +74,18 @@ const projects:Project[] = [
 				<img src="/astronaut-svgrepo-com.svg" alt="spaceshit.jpg" class="img-dimensions" />
 			</div>
 		</div>
-		<section id="tiles" class="link-card-grid">
-			{
-				projects.map((project:Project) => <Tile project={project} />)
-			}
+		<section id="tiles">
+			<div class="link-card-grid">
+				{
+					projects.map((project:Project) => <Tile project={project} />)
+				}
+			</div>
 		</section>
 	</main>
 </Layout>
 
-<style>
+<style lang="scss">
+	@import '../styles/abstracts.scss';
 	
 	:root {
 		--astro-gradient: linear-gradient(0deg, #4f39fa, #da62c4);
@@ -94,12 +97,14 @@ const projects:Project[] = [
 		background-color: #0f172ae6;
 	}
 
+	#tiles {
+		background-color: color("primary-light");
+	}
+
 	.img-container {
-		display: flex;
+		@include flex-box(column, wrap, center, center);
 		padding: 1rem;
 		padding-bottom: 3rem;
-		align-items: center;
-		justify-content: center;
 	}
 
 	.img-dimensions {
@@ -128,13 +133,6 @@ const projects:Project[] = [
 		margin-bottom: 0;
 	}
 
-	section {
-		margin: auto;
-		padding: 1em;
-		max-width: 1200px;
-		padding: 1rem;
-	}
-
 	.text-gradient {
 		font-weight: 900;
 		background-image: var(--astro-gradient);
@@ -157,27 +155,27 @@ const projects:Project[] = [
 	}
 
 	.link-card-grid {
-		display: flex;
-		flex-wrap: wrap;
-		flex-direction: column;
-		justify-content: center;
-		align-items: center;
+		@include flex-box(column, wrap, center, center);
+		margin: auto;
+		padding: 1em;
+		max-width: 1200px;
+		padding: 3rem 1rem 5rem 1rem;
 	}
 
-	@media screen and (min-width: 500px) {
+	@media screen and (min-width: screen("sm")) {
 		.img-dimensions {
 			height: auto;
 			width: 350px
 		}
 	}
 
-	@media screen and (min-width: 768px) {
+	@media screen and (min-width: screen("md")) {
 		.subheader-container {
 			max-width: 700px;
 		}
 	}
 
-	@media screen and (min-width: 992px) {
+	@media screen and (min-width: screen("lg")) {
 		h1 {
 			font-size: 3.5rem !important;
 		}

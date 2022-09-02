@@ -17,11 +17,10 @@ const { project: { title, route, type, colorClass, image } } = Astro.props;
 		<img src={image.srcPath} alt={image.altText} class="img" />
 	</div>
 </a>
-<style>
-
+<style lang="scss">
+	@import '../styles/abstracts.scss';
 	.link-tile {
-		display: flex;
-        flex-direction: column;
+		@include flex-box(column, nowrap, normal, normal);
 		position: relative;
 		padding: 0.15rem;
 		background-size: 400%;
@@ -35,9 +34,7 @@ const { project: { title, route, type, colorClass, image } } = Astro.props;
 	}
 
 	.img-container {
-		display: flex;
-		align-items: center;
-		justify-content: center;
+		@include flex-box(column, wrap, center, center);
 		height: 80%;
 		padding: 1rem;
 	}
@@ -107,20 +104,14 @@ const { project: { title, route, type, colorClass, image } } = Astro.props;
 		transform: translateX(2px);
 	}
 
-	@media screen and (min-width: 360px) {
+	@media screen and (min-width: screen("xs")) {
 		.link-tile {
-            height: 400px
+            height: 450px
 	    }
 		.img { max-width: 300px;}
 	}
 
-	@media screen and (min-width: 360px) {
-		.link-tile {
-            height: 450px
-	    }
-	}
-
-    @media screen and (min-width: 768px) {
+    @media screen and (min-width: screen("md")) {
 		.link-tile {
             width: 70%;
             height: 500px
