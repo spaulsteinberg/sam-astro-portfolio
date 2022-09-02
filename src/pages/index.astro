@@ -59,7 +59,7 @@ const projects:Project[] = [
 
 <Layout title="Sam Steinberg">
 	<main>
-		<div class="container">
+		<div class="main-container">
 			<div class="header">
 				<h1 class="text-center">Hi, I'm Sam. Welcome to my site.</h1>
 				<div class="subheader-container subheader text-center">
@@ -83,11 +83,12 @@ const projects:Project[] = [
 </Layout>
 
 <style>
+	
 	:root {
 		--astro-gradient: linear-gradient(0deg, #4f39fa, #da62c4);
 	}
 
-	.container {
+	.main-container {
 		width:100%;
 		color:white;
 		background-color: #0f172ae6;
@@ -126,8 +127,6 @@ const projects:Project[] = [
 		margin-top: 2rem;
 		margin-bottom: 0;
 	}
-
-	.text-center { text-align: center; }
 
 	section {
 		margin: auto;
@@ -186,7 +185,7 @@ const projects:Project[] = [
 			height: auto;
 			width: 500px
 		}
-		.container {
+		.main-container {
 			min-height: 100vh;
 		}
 	}

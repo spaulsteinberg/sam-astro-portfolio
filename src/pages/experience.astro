@@ -1,7 +1,6 @@
 ---
 import ExperienceGrid from "../components/experience/ExperienceGrid.astro";
 import ExperienceJobCard from "../components/experience/ExperienceJobCard.astro";
-import ExperienceTimelineItem from "../components/experience/ExperienceTimelineItem.astro";
 import Layout from "../layouts/Layout.astro";
 import type ExperienceJob from "../models/ExperienceJob";
 import type ExperienceTimelineElement from "../models/ExperienceTimelineElement";
@@ -65,21 +64,23 @@ const jobs:ExperienceJob[] = [
         jobs.map((job:ExperienceJob) => <ExperienceJobCard job={job} />)
       }
     </section>
-    <section>
+    <section class="wide-background-section">
       Explain school b.s. degree, etc. 
       resume download
     </section>
   </main>
 </Layout>
 
-<style>
+<style lang="scss">
+
+  @import '../styles/abstracts.scss';
+
   .card-section {
-    padding: 0 1rem;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;
+    @include flex-box(column, wrap, center, center);
+    padding: 4rem 1rem;
+    background-color: color("primary-light");
+    max-width: none;
+    margin-top: 0
   }
 
   main {
@@ -87,25 +88,22 @@ const jobs:ExperienceJob[] = [
     color: white;
   }
 
-  .img {
-    max-width: 500px;
-    height: auto;
-  }
-
-  .work-item-container {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    height: 210px;
-  }
-
   .header {
-    background-color: #0f172ae6;
+    background-color: color("primary");
   }
 
   section {
     max-width: 1200px;
-    margin: 4rem auto 2rem;
+    margin: 4rem auto 0;
+  }
+
+  .wide-background-section {
+    width: 100%;
+    background-color: color("primary");
+    color: white;
+    max-width: none;
+    margin-bottom: 0;
+    margin-top: 0
   }
 
   h1 {
