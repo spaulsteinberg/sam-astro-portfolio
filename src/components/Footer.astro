@@ -1,0 +1,97 @@
+---
+import type SvgIcon from "../models/SvgIcon";
+import Icon from "./utility/Icon.astro";
+
+const githubIcon:SvgIcon = {
+    type: 'github',
+    width: 24,
+    height: 24,
+    fill: 'white'
+}
+
+const linkedinIcon:SvgIcon = {
+    type: 'linkedin',
+    width: 24,
+    height: 24,
+    fill: 'white'
+} 
+---
+
+<footer class="footer">
+    <div class="footer-inner">
+        <div class="footer-item email-link">
+            <a href="mailto:sampaulsteinberg@gmail.com" rel="noreferrer">sampaulsteinberg@gmail.com</a>  
+        </div>
+        <div class="footer-item icon-container">
+            <a class="icon-wrapper" href="https://github.com/spaulsteinberg" target="_blank" rel="noreferrer">
+                <Icon icon={githubIcon} />
+            </a>
+            <a class="icon-wrapper" href="https://www.linkedin.com/in/samuel-steinberg-3a028b156/" target="_blank" rel="noreferrer">
+                <Icon icon={linkedinIcon} />
+            </a>
+        </div>
+    </div>
+</footer>
+
+<style lang="scss">
+    @import '../styles/abstracts.scss';
+
+    .footer {
+        width: 100%;
+        min-height: 70px;
+        color: white;
+        background-color: color("primary");
+        border-top: 1px solid color("secondary-light");
+        display: flex;
+        align-items: center
+    }
+
+    .footer-inner {
+        @include flex-box(column, wrap, space-between, center);
+        max-width: 700px;
+        width: 100%;
+        margin: 1rem 0;
+        padding: .5rem 1rem;
+    }
+
+    .footer-item {
+        width: 100%;
+        text-align: center;
+        a {
+            text-decoration: none;
+            color: white;
+            &:hover { cursor: pointer; }
+        }
+    }
+
+    .email-link {
+        margin-bottom: 1rem;
+    }
+
+    .icon-wrapper {
+        margin: 0 .5rem
+    }
+
+    .icon-container {
+        @include flex-box(row, wrap, center, center);
+    }
+
+    @media screen and (min-width: screen("sm")) {
+        .footer-inner { margin: 1rem auto; }
+    }
+
+    @media screen and (min-width: screen("md")) {
+        .footer-inner { flex-direction: row; }
+        .footer-item { width: 30%; text-align: left; }
+        .icon-container {
+            justify-content: flex-end;
+        }
+        .email-link { margin-bottom: 0; }
+    }
+
+    @media screen and (min-width: screen("xl")) {
+        .footer-inner {
+            max-width: 1100px;
+        }
+    }
+</style>
