@@ -92,9 +92,10 @@ const projects:Project[] = [
 	}
 
 	.main-container {
+		@include flex-box(column, wrap, center, center);
 		width:100%;
 		color:white;
-		background-color: #0f172ae6;
+		background-color: color("primary");
 	}
 
 	#tiles {
