@@ -1,0 +1,105 @@
+---
+import Layout from "../layouts/Layout.astro";
+---
+
+<Layout title="About">
+  <main>
+    <div class="main-container">
+      <div class="img-container">
+        <img
+          src="/sam-pic.jpeg"
+          alt="sam picture.jpeg"
+          height="auto"
+          width="50%"
+        />
+      </div>
+      <div class="description-container">
+        <h1>I'm Sam, a Full Stack Developer at IBM.</h1>
+        <p>
+          I am currently a full stack developer for the Early Programs team at
+          IBM. Before that, I began my career at Charles Schwab where I was also on a full stack team.
+          After completing my degree at the University of Tennessee, I moved to Austin, TX.
+        </p>
+      </div>
+    </div>
+  </main>
+</Layout>
+
+<style lang="scss">
+  @import "../styles/abstracts.scss";
+
+  h1 {
+    font-size: 2.5rem;
+    margin: 2rem 0 1rem;
+    color: white;
+  }
+
+  p {
+    color: color("secondary-light");
+    font-size: 1.75rem
+  }
+
+  main {
+    background-color: color("primary");
+  }
+
+  .main-container {
+    @include flex-box(column, wrap, start, center);
+    max-width: 1200px;
+    min-height: 100vh;
+    margin: 0 auto;
+    padding: 5rem 1rem 1rem;
+  }
+
+  .description-container {
+    width: 100%;
+    text-align: center;
+  }
+
+  
+  .img-container {
+    width: 100%;
+  }
+
+  .img-container {
+    @include flex-box(column, wrap, center, center);
+    img {
+      border-radius: 10px;
+      overflow: hidden;
+      width: 80%;
+    }
+  }
+
+  @media screen and (min-width: screen("md")) {
+    .description-container {
+        width: 70%;
+    }
+    .img-container {
+        width: 80%;
+    }
+  }
+
+  @media screen and (min-width: screen("lg")) {
+    .img-container {
+        width: 70%;
+    }
+  }
+
+  @media screen and (min-width: screen("xl")) {
+    .main-container {
+      flex-direction: row;
+      justify-content: center;
+      padding: 1rem;
+    }
+    .description-container {
+        width: 50%;
+        text-align: left;
+    }
+    .img-container {
+        width: 50%
+    }
+    h1 {
+        margin-top: 0;
+    }
+  }
+</style>
