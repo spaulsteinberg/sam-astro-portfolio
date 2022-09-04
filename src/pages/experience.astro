@@ -49,6 +49,7 @@ const jobs:ExperienceJob[] = [
         pills: ['Python', 'Selenium', 'PyQt', 'SQL', 'GUI Development']
     },
 ]
+
 ---
 
 <Layout title="Experience">
@@ -65,8 +66,14 @@ const jobs:ExperienceJob[] = [
       }
     </section>
     <section class="wide-background-section">
-      Explain school b.s. degree, etc. 
-      resume download
+      <div class="education-skills-container">
+        <h2>Education</h2>
+        <p>University of Tennessee - B.S. Computer Science, Minor in Cybersecurity</p>
+        <h2>Libraries and Languages</h2>
+        <p>TypeScript, JavaScript, JSX, Python, C#, C++, C, HTML5, CSS3, PHP, Java</p>
+        <p>Angular, React.js, React Native, Vue.js, Next.js, JQuery, Node.js, Express.js, .NET Core, Selenium Webdriver, Spring Boot</p>
+        <p>MongoDB, Firebase, SQL, RabbitMQ,</p>
+      </div>
     </section>
   </main>
 </Layout>
@@ -103,7 +110,11 @@ const jobs:ExperienceJob[] = [
     color: white;
     max-width: none;
     margin-bottom: 0;
-    margin-top: 0
+    margin-top: 0;
+  }
+
+  .education-skills-container {
+    padding: 4rem 1rem;
   }
 
   h1 {
