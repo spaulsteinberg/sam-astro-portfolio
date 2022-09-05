@@ -1,8 +1,13 @@
 ---
 import Layout from "../layouts/Layout.astro";
+
+export const description:string = "About Sam: Full Stack Developer at IBM"
+
+export const keywords:string = "samuel steinberg, sam steinberg, sam steinberg developer, sam steinberg engineer, sam steinberg software"
+
 ---
 
-<Layout title="About">
+<Layout title="About" description={description} keywords={keywords}>
   <main>
     <div class="main-container">
       <div class="img-container">
