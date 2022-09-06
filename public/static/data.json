@@ -1,0 +1,71 @@
+{
+    "a2z": {
+        "title": "a2z",
+        "description": "This project offers a middle ground between large-scale freight carriers and friends helping each other move items. I was motivated by supply chain issues stemming from 2020, anybody from trucking contractors to normal people could help ease the load and move products, while also making some money. This tool is for those who are looking for drivers to contract, while the mobile app is specifically for drivers. Trip tickets can be created, with an integrated and seamless map provided by the Google, with tickets and requests being easily managed in their respective tables. Account management is also easy to use, and is helpful for viewing the latest events that have occurred in the account.",
+        "image": {
+            "srcPath": "/sam-pic.jpeg",
+            "altText": "a2z photo"
+        },
+        "technology": ["Vue.js", "Vuex", "React Native", "Redux", "Firebase Authentication", "Firestore", "Google Maps/Directions/Places API", "Node.js", "Express,js", "Element UI"],
+        "githubLink": "https://github.com/spaulsteinberg/a2z",
+        "seo": {
+            "description": "a2z offers a middle ground between large-scale freight carriers and friends helping each other move items.",
+            "keywords": "sam steinberg projects, samuel steinberg projects, projects, sam steinberg, a2z"
+        }
+    },
+    "rAdmin": {
+        "title": "rAdmin",
+        "description": "This project conceptualizes a business idea: A quick, painless way to allow small businesses to quickly spin off a restaurant website, complete with an online ordering service and an administration tool (Admin tool).This tool controls the content a customer will see in real-time: It's where menus can be created and configured, items to be ordered are customized, and eye-grabbing home screens are be built to the last detail. Additionally, inventory tracking is enabled if a user desires to track it digitally, and the dashboard contains visually appealing and easy to understand charts to view data. All restaurant ordering data is freely available to the users. Its their data, so all of it is available.",
+        "image": {
+            "srcPath": "/sam-pic.jpeg",
+            "altText": "a2z photo"
+        },
+        "technology": ["React", "React TypeScript", "Redux", "Firestore", "Firebase Auth", "Stripe", "SCSS", "Java", "Spring Boot", "Docker", "Bootstrap", "Material UI"],
+        "githubLink": "https://github.com/spaulsteinberg/restaurant-tool",
+        "seo": {
+            "description": "rAdmin conceptualizes a business idea: A quick, painless way to allow small businesses to quickly spin off a restaurant website, complete with an online ordering service and an administration tool (Admin tool).",
+            "keywords": "sam steinberg projects, samuel steinberg projects, projects, sam steinberg, rAdmin"
+        }
+    },
+    "stocktrace": {
+        "title": "StockTrace",
+        "description": "StockTrace was imagined when I was consistently going back and forth between real-time quote sources, my portfolio, and finally my calculator to determine whether a stock was worth purchasing (not to mention how much of it). Multiply this by each stock you are thinking of buying, and you are in for a lot of time spent just searching. Not to mention convoluted visuals and boatloads of information the average investor simply does not care about. I decided to come up with a solution. A project that offers real-time ticker quotes, easy chart visualizations, a watchlist, a risk-free sandbox to get an accurate picture of what you can assume you will buy in at to determine the price you should sell, and a mock portfolio to track your real positions with ease.",
+        "image": {
+            "srcPath": "/sam-pic.jpeg",
+            "altText": "a2z photo"
+        },
+        "technology": ["Angular", "TypeScript", "JavaScript", "Python", "Node.js", "Express.js", "RxJS", "D3.js", "JWT auth", "Angular Material", "MongoDB", "IEX Cloud Console", "Bootstrap", "FullCalendar", "Chart.js"],
+        "githubLink": "https://github.com/spaulsteinberg/stock-UI",
+        "seo": {
+            "description": "StockTrace minimizes the time you spend researching individual stock trends, so you can make an informed decision.",
+            "keywords": "sam steinberg projects, samuel steinberg projects, projects, sam steinberg, stocktrace"
+        }
+    },
+    "github-personal": {
+        "title": "GitHub-Infused Portfolio",
+        "description": "Infusing GitHub directly into a portfolio can add depth and credibility to your resume and what one had accomplished. Since it is a pillar of open-source and is so widely used, it makes it simple to have an interface into your code and have any who are interested track progress, commit frequency, code frequency, etc. This project was mainly for fun and to grasp a better understanding of Angular, so it was worthwhile to add ample and easy to read visuals, cards, and analytic data. In addition, users can send feedback to me through the website that delivers via both email and text. Language frequency, commit charts, and commit frequency graphs for each repository and account as a whole enhance a visitors understanding of what type of applications and code thats being written.",
+        "image": {
+            "srcPath": "/sam-pic.jpeg",
+            "altText": "a2z photo"
+        },
+        "technology": ["Angular", "TypeScript", "Node.js", "Express,js", "GitHub API", "Google Analytics", "SQL", "Twilio", "Nodemailer", "Bootstrap", "Chart.js"],
+        "githubLink": "https://github.com/spaulsteinberg/personal-site",
+        "seo": {
+            "description": "Infusing GitHub data into my initial portfolio was a fun side project to learn more about web frameworks and development",
+            "keywords": "sam steinberg projects, samuel steinberg projects, projects, sam steinberg, sam steinberg github"
+        }
+    },
+    "animations": {
+        "title": "CSS/SVG3 Animations",
+        "description": "Creating relatively complex and creative animations using HTML, CSS, and SVG3 for a great learning experience and a chance to create some cool visuals.",
+        "image": {
+            "srcPath": "/sam-pic.jpeg",
+            "altText": "a2z photo"
+        },
+        "technology": ["HTML", "CSS", "SVG3"],
+        "seo": {
+            "description": "Relatively complex and creative animations.",
+            "keywords": "sam steinberg projects, samuel steinberg projects, projects, sam steinberg, sam steinberg animations"
+        }
+    }
+}

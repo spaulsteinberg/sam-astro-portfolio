@@ -1,60 +1,7 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import type Project from '../models/Project'
-import Tile from '../components/Tile.astro';
-
-const projects:Project[] = [
-	{
-		title: "a2z",
-		route: '/',
-		type: 'Mobile/Web App',
-		colorClass: 'tile-purple-pink',
-		image: {
-			srcPath: "/truck-svgrepo-com.svg",
-			altText: "truck.svg"
-		}
-	},
-	{
-		title: "rAdmin",
-		route: '/',
-		type: 'Web App',
-		colorClass: 'tile-blue-teal',
-		image: {
-			srcPath: "/restaurant-plate-svgrepo-com.svg",
-			altText: "restaurant front.svg"
-		}
-	}, 
-	{
-		title: "StockTrace",
-		route: '/',
-		type: 'Web App',
-		colorClass: 'tile-yellow-pink',
-		image: {
-			srcPath: "/barchart-svgrepo-com.svg",
-			altText: "chart.svg"
-		}
-	}, 
-	{
-		title: "Github-Personal",
-		route: '/',
-		type: 'Web App',
-		colorClass: 'tile-blue-pink',
-		image: {
-			srcPath: "/github-svgrepo-com.svg",
-			altText: "github.svg"
-		}
-	}, 
-	{
-		title: "Animation Library",
-		route: '/',
-		type: 'CSS/SVG',
-		colorClass: 'tile-lightblue-pink',
-		image: {
-			srcPath: "/gif-svgrepo-com.svg",
-			altText: "gif-icon.svg"
-		}
-	}
-]
+import HeaderWithImage from '../components/home/HeaderWithImage.astro';
+import LinkCardGrid from '../components/home/LinkCardGrid.astro';
 
 export const description:string = "Hi, I'm Sam, a developer based in Austin, TX."
 
@@ -64,27 +11,9 @@ export const keywords:string = "samuel steinberg, sam steinberg, sam steinberg d
 
 <Layout title="Sam Steinberg" description={description} keywords={keywords}>
 	<main>
-		<div class="main-container">
-			<div class="header">
-				<h1 class="text-center">Hi, I'm Sam. Welcome to my site.</h1>
-				<div class="subheader-container subheader text-center">
-					<p>
-						I am a full-stack developer based in Austin, TX.
-						My portfolio has basic CSS animations to modern web frameworks, and mobile apps.
-						Check out my projects by selecting from the tiles.
-					</p>
-				</div>
-			</div>
-			<div class="img-container">
-				<img src="/astronaut-svgrepo-com.svg" alt="spaceshit.jpg" class="img-dimensions" />
-			</div>
-		</div>
+		<HeaderWithImage />
 		<section id="tiles">
-			<div class="link-card-grid">
-				{
-					projects.map((project:Project) => <Tile project={project} />)
-				}
-			</div>
+			<LinkCardGrid />
 		</section>
 	</main>
 </Layout>
@@ -96,47 +25,8 @@ export const keywords:string = "samuel steinberg, sam steinberg, sam steinberg d
 		--astro-gradient: linear-gradient(0deg, #4f39fa, #da62c4);
 	}
 
-	.main-container {
-		@include flex-box(column, wrap, center, center);
-		width:100%;
-		color:white;
-		background-color: color("primary");
-	}
-
 	#tiles {
 		background-color: color("primary-light");
-	}
-
-	.img-container {
-		@include flex-box(column, wrap, center, center);
-		padding: 1rem;
-		padding-bottom: 3rem;
-	}
-
-	.img-dimensions {
-		height: auto;
-		width: 250px
-	}
-
-	.header {
-		color: white;
-		max-width: 1100px;
-    	margin: 0 auto;
-		padding: 1rem;
-	}
-
-	.subheader-container {
-		max-width: 500px;
-		margin: 0 auto;
-	}
-
-	.subheader {
-		color: #94a3b8
-	}
-
-	h1 {
-		margin-top: 2rem;
-		margin-bottom: 0;
 	}
 
 	.text-gradient {
@@ -166,31 +56,5 @@ export const keywords:string = "samuel steinberg, sam steinberg, sam steinberg d
 		padding: 1em;
 		max-width: 1200px;
 		padding: 3rem 1rem 5rem 1rem;
-	}
-
-	@media screen and (min-width: screen("sm")) {
-		.img-dimensions {
-			height: auto;
-			width: 350px
-		}
-	}
-
-	@media screen and (min-width: screen("md")) {
-		.subheader-container {
-			max-width: 700px;
-		}
-	}
-
-	@media screen and (min-width: screen("lg")) {
-		h1 {
-			font-size: 3.5rem !important;
-		}
-		.img-dimensions {
-			height: auto;
-			width: 500px
-		}
-		.main-container {
-			min-height: 100vh;
-		}
 	}
 </style>

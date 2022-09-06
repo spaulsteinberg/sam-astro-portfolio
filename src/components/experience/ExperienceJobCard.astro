@@ -57,7 +57,7 @@ const { job: { image, description, pills }} = Astro.props
     .no-margin { margin: 0; margin-bottom: 1rem; }
 
     .description-container {
-        @include flex-box(column, nowrap, flex-start, normal);
+        @include flex-box(row, wrap, flex-start, normal);
         height: 50%;
         flex-grow: 1;
     }

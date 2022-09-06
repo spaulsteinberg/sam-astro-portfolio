@@ -1,0 +1,76 @@
+---
+import type Project from "../../models/Project";
+import Tile from "../Tile.astro";
+
+const projects:Project[] = [
+	{
+		title: "a2z",
+		route: '/project/a2z',
+		type: 'Mobile/Web App',
+		colorClass: 'tile-purple-pink',
+		image: {
+			srcPath: "/truck-svgrepo-com.svg",
+			altText: "truck.svg"
+		}
+	},
+	{
+		title: "rAdmin",
+		route: '/project/rAdmin',
+		type: 'Web App',
+		colorClass: 'tile-blue-teal',
+		image: {
+			srcPath: "/restaurant-plate-svgrepo-com.svg",
+			altText: "restaurant front.svg"
+		}
+	}, 
+	{
+		title: "StockTrace",
+		route: '/project/stocktrace',
+		type: 'Web App',
+		colorClass: 'tile-yellow-pink',
+		image: {
+			srcPath: "/barchart-svgrepo-com.svg",
+			altText: "chart.svg"
+		}
+	}, 
+	{
+		title: "Github-Personal",
+		route: '/project/github-personal',
+		type: 'Web App',
+		colorClass: 'tile-blue-pink',
+		image: {
+			srcPath: "/github-svgrepo-com.svg",
+			altText: "github.svg"
+		}
+	}, 
+	{
+		title: "Animation Library",
+		route: '/project/animations',
+		type: 'CSS/SVG',
+		colorClass: 'tile-lightblue-pink',
+		image: {
+			srcPath: "/gif-svgrepo-com.svg",
+			altText: "gif-icon.svg"
+		}
+	}
+]
+
+---
+
+<div class="link-card-grid">
+    {
+        projects.map((project:Project) => <Tile project={project} />)
+    }
+</div>
+
+<style lang="scss">
+	@import "../../styles/abstracts.scss";
+
+	.link-card-grid {
+		@include flex-box(column, wrap, center, center);
+		margin: auto;
+		padding: 1em;
+		max-width: 1200px;
+		padding: 3rem 1rem 5rem 1rem;
+	}
+</style>
