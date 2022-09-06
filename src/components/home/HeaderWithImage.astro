@@ -1,0 +1,92 @@
+---
+
+---
+
+<div class="main-container">
+    <div class="header">
+        <h1 class="text-center">Hi, I'm Sam. Welcome to my site.</h1>
+        <div class="subheader-container subheader text-center">
+            <p>
+                I am a full-stack developer based in Austin, TX.
+                My portfolio has basic CSS animations to modern web frameworks, and mobile apps.
+                Check out my projects by selecting from the tiles.
+            </p>
+        </div>
+    </div>
+    <div class="img-container">
+        <img src="/astronaut-svgrepo-com.svg" alt="spacesuit.jpg" class="img-dimensions" />
+    </div>
+</div>
+
+<style lang="scss">
+	@import "../../styles/abstracts.scss";
+	
+	:root {
+		--astro-gradient: linear-gradient(0deg, #4f39fa, #da62c4);
+	}
+
+	.main-container {
+		@include flex-box(column, wrap, center, center);
+		width:100%;
+		color:white;
+		background-color: color("primary");
+	}
+
+	.img-container {
+		@include flex-box(column, wrap, center, center);
+		padding: 1rem;
+		padding-bottom: 3rem;
+	}
+
+	.img-dimensions {
+		height: auto;
+		width: 250px
+	}
+
+	.header {
+		color: white;
+		max-width: 1100px;
+    	margin: 0 auto;
+		padding: 1rem;
+	}
+
+	.subheader-container {
+		max-width: 500px;
+		margin: 0 auto;
+	}
+
+	.subheader {
+		color: #94a3b8
+	}
+
+	h1 {
+		margin-top: 2rem;
+		margin-bottom: 0;
+	}
+
+	@media screen and (min-width: screen("sm")) {
+		.img-dimensions {
+			height: auto;
+			width: 350px
+		}
+	}
+
+	@media screen and (min-width: screen("md")) {
+		.subheader-container {
+			max-width: 700px;
+		}
+	}
+
+	@media screen and (min-width: screen("lg")) {
+		h1 {
+			font-size: 3.5rem !important;
+		}
+		.img-dimensions {
+			height: auto;
+			width: 500px
+		}
+		.main-container {
+			min-height: 100vh;
+		}
+	}
+</style>
