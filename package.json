@@ -13,6 +13,12 @@
     "astro": "^1.1.2"
   },
   "dependencies": {
+    "@astrojs/preact": "^1.0.2",
+    "bootstrap": "^5.2.0",
     "sass": "^1.54.8"
+  },
+  "overrides": {
+    "react": "npm:@preact/compat@latest",
+    "react-dom": "npm:@preact/compat@latest"
   }
 }
