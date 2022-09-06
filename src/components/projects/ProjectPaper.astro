@@ -1,0 +1,78 @@
+---
+import Pill from "../utility/Pill.astro";
+import type ProjectDetail from "../../models/ProjectDetail";
+
+export interface Props {
+  detail: ProjectDetail;
+}
+
+const { detail } = Astro.props;
+---
+
+<div class="inner-container">
+  <h1 class="project-header">{detail.title}</h1>
+  <div class="img-container">
+    <img
+      src={detail.image.srcPath}
+      alt={detail.image.altText}
+      width="100%"
+      height="auto"
+    />
+  </div>
+  <div class="project-text">
+    <p>{detail.description}</p>
+  </div>
+  {
+    detail.githubLink ? (
+      <div>
+        Check out github link <a href={detail.githubLink} target="_blank" rel="noreferrer">link</a>
+      </div>
+    ) : null
+  }
+  <div>
+    {detail.technology.map((t: string) => <Pill title={t} />)}
+  </div>
+</div>
+
+<style lang="scss">
+  @import "../../styles/abstracts.scss";
+
+  .project-text {
+    color: color("secondary-light");
+  }
+
+  .project-header {
+    color: white;
+  }
+
+  .img-container {
+    text-align: center;
+    width: 95%;
+  }
+
+  .inner-container {
+    @include flex-box(column, wrap, flex-start, center);
+    background-color: color("primary-light");
+    height: 100%;
+    width: 100%;
+    flex-grow: 1;
+  }
+
+  @media screen and (min-width: screen("sm")) {
+    .img-container {
+      width: 90%;
+    }
+  }
+
+  @media screen and (min-width: screen("md")) {
+    .img-container {
+      width: 75%;
+    }
+  }
+
+  @media screen and (min-width: screen("lg")) {
+    .img-container {
+      width: 50%;
+    }
+  }
+</style>

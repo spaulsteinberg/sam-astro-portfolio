@@ -1,24 +1,92 @@
 ---
+import Layout from "../../layouts/Layout.astro";
+import json from "../../../public/static/data.json"
+import type SEO from "../../models/SEO";
+import type ProjectDetail from "../../models/ProjectDetail";
+import Pill from "../../components/utility/Pill.astro";
+import ProjectPaper from "../../components/projects/ProjectPaper.astro";
 
-export function getStaticPaths() {
-    return [
-        {
-            params: { project: 'abc' }
-        },
-        {
-            params: { project: '2' }
-        },
-        {
-            params: { project: '3' }
-        }
-    ]
+interface PathKey {
+    projectId:string;
 }
 
-const { project } = Astro.params
+interface PathPropData {
+    data: ProjectDetail
+}
+
+export interface PathData {
+    params: PathKey;
+    props: PathPropData;
+}
+
+export interface Props {
+  data:ProjectDetail
+}
+
+export function getStaticPaths() {
+    const pathData:PathData[] = []
+    for (const id of Object.keys(json)) {
+        // need to whitelist here. typescript complains.
+        if (id === "a2z" || id === "rAdmin") {
+            pathData.push({
+                params: {
+                    projectId: id
+                },
+                props: {
+                    data: json[id] as ProjectDetail
+                }
+            })
+        }
+    }
+    
+    return pathData
+}
+
+const { data } = Astro.props
 ---
 
-<div>hello world {project}</div>
+<Layout title="Project Title" description={data.seo.description} keywords={data.seo.keywords}>
+    <main>
+        <div class="main-container">
+            <ProjectPaper detail={data} />
+        </div>
+    </main>
+</Layout>
 
 <style lang="scss">
+@import "../../styles/abstracts.scss";
 
+main {
+    background-color: color("primary");
+}
+
+.main-container {
+    display: flex;
+    flex-direction: column;
+    min-height: calc(100vh - 3rem);
+    padding: 1rem;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+@media screen and (min-width: screen("sm")) {
+    .main-container {
+        min-height: calc(100vh - 6rem);
+        padding: 2rem;
+    }
+}
+
+@media screen and (min-width: screen("md")) {
+    .main-container {
+        min-height: calc(100vh - 9rem);
+        padding: 3rem;
+    }
+}
+
+@media screen and (min-width: screen("lg")) {
+    .main-container {
+        min-height: calc(100vh - 15rem);
+        padding: 5rem;
+    }
+}
 </style>
