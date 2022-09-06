@@ -24,12 +24,12 @@ const { detail } = Astro.props;
   </div>
   {
     detail.githubLink ? (
-      <div>
-        Check out github link <a href={detail.githubLink} target="_blank" rel="noreferrer">link</a>
+      <div class="github-link">
+        Check out github <a href={detail.githubLink} target="_blank" rel="noreferrer">link</a>
       </div>
     ) : null
   }
-  <div>
+  <div class="pills">
     {detail.technology.map((t: string) => <Pill title={t} />)}
   </div>
 </div>
@@ -39,10 +39,27 @@ const { detail } = Astro.props;
 
   .project-text {
     color: color("secondary-light");
+    padding: 1rem;
+    padding-bottom: 0
   }
 
   .project-header {
     color: white;
+    text-align: center;
+  } 
+  
+  .github-link {
+    padding: 1rem;
+    color: white;
+    a {
+      text-decoration: none;
+      color: white;
+    }
+  }
+
+  .pills {
+    text-align: center;
+    padding: 1rem;
   }
 
   .img-container {
