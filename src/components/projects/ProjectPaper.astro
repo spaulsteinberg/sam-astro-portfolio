@@ -1,6 +1,7 @@
 ---
 import Pill from "../utility/Pill.astro";
 import type ProjectDetail from "../../models/ProjectDetail";
+import OutlineLinkButton from "../utility/OutlineLinkButton.astro"
 
 export interface Props {
   detail: ProjectDetail;
@@ -25,7 +26,7 @@ const { detail } = Astro.props;
   {
     detail.githubLink ? (
       <div class="github-link">
-        Check out github <a href={detail.githubLink} target="_blank" rel="noreferrer">link</a>
+        <OutlineLinkButton route={detail.githubLink} title="Link to GitHub" borderColor="white" />
       </div>
     ) : null
   }
@@ -40,7 +41,8 @@ const { detail } = Astro.props;
   .project-text {
     color: color("secondary-light");
     padding: 1rem;
-    padding-bottom: 0
+    padding-bottom: 0;
+    text-align: center;
   }
 
   .project-header {
@@ -50,10 +52,8 @@ const { detail } = Astro.props;
   
   .github-link {
     padding: 1rem;
-    color: white;
     a {
       text-decoration: none;
-      color: white;
     }
   }
 
