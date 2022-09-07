@@ -1,5 +1,5 @@
 interface SvgIcon {
-    type: "github" | "linkedin";
+    type: "github" | "linkedin" | "mail";
     width:number|string;
     height:number|string;
     fill:string;

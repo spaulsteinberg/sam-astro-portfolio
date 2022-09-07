@@ -1,0 +1,55 @@
+---
+import Icon from "../components/utility/Icon.astro";
+import Layout from "../layouts/Layout.astro";
+import type SvgIcon from "../models/SvgIcon";
+
+interface IconLink extends SvgIcon {
+    route:string;
+}
+
+export const ICONS:IconLink[] = [
+    { route: "https://www.linkedin.com/in/samuel-steinberg-3a028b156/", type: "linkedin", fill: "white", width: 24, height: 24 },
+    { route: "mailto:sampaulsteinberg@gmail.com", type: "mail", fill: "white", width: 24, height: 24},
+    { route: "https://github.com/spaulsteinberg", type: "github", fill: "white", width: 24, height: 24},
+]
+
+---
+
+<Layout title="Contact" description="Check out my contact information and profiles here." keywords="sam steinberg contact, contact sam steinberg, sam steinberg email">
+    <main>
+        <div class="main-container">
+            <p>The best way to reach me is via email, but feel free to message me on LinkedIn as well!</p>
+            <div class="icon-row">
+                { ICONS.map((icon:IconLink) => (
+                    <a href={icon.route} target="_blank" rel="noreferrer" class="inner-icon-container">
+                        <Icon icon={icon} />
+                    </a>
+                )) }
+            </div>
+        </div>
+    </main>
+</Layout>
+
+<style lang="scss">
+    @import '../styles/abstracts.scss';
+    main {
+        background-color: color("primary");
+        min-height: calc(100vh - 70px);
+    }
+
+    .icon-row {
+        @include flex-box(row, wrap, center, center);
+    }
+
+    .inner-icon-container {
+        margin: 0 .5rem;
+    }
+
+    .main-container {
+        padding-top: 5rem;
+        padding-left: 1rem;
+        padding-right: 1rem;
+        text-align: center;
+        color: white;
+    }
+</style>
