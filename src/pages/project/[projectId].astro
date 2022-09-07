@@ -45,7 +45,7 @@ export function getStaticPaths() {
 const { data } = Astro.props
 ---
 
-<Layout title="Project Title" description={data.seo.description} keywords={data.seo.keywords}>
+<Layout title={data.title} description={data.seo.description} keywords={data.seo.keywords}>
     <main>
         <div class="main-container">
             <ProjectPaper detail={data} />
