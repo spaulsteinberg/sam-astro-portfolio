@@ -29,7 +29,7 @@ const { job: { image, description, pills }} = Astro.props
 <style lang="scss">
     @import '../../styles/abstracts.scss';
     .card {
-        height: 450px;
+        height: 500px !important;
         width: 100%;
         border: 1px solid #0f172ae6;;
         border-radius: 10px;
@@ -73,6 +73,7 @@ const { job: { image, description, pills }} = Astro.props
         .card {
             width: 70%;
             max-width: 350px;
+            height: 450px !important;
         }
         .description-container {
             justify-content: space-between;
