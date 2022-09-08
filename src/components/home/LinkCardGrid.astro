@@ -1,6 +1,11 @@
 ---
 import type Project from "../../models/Project";
 import Tile from "../Tile.astro";
+import truck from "/truck-svgrepo-com.svg"
+import restaurant from "/restaurant-plate-svgrepo-com.svg"
+import stocks from "/barchart-svgrepo-com.svg"
+import github from "/github-svgrepo-com.svg"
+import animations from "/gif-svgrepo-com.svg"
 
 const projects:Project[] = [
 	{
@@ -9,7 +14,7 @@ const projects:Project[] = [
 		type: 'Mobile/Web App',
 		colorClass: 'tile-purple-pink',
 		image: {
-			srcPath: "/truck-svgrepo-com.svg",
+			srcPath: truck,
 			altText: "truck.svg"
 		}
 	},
@@ -19,7 +24,7 @@ const projects:Project[] = [
 		type: 'Web App',
 		colorClass: 'tile-blue-teal',
 		image: {
-			srcPath: "/restaurant-plate-svgrepo-com.svg",
+			srcPath: restaurant,
 			altText: "restaurant front.svg"
 		}
 	}, 
@@ -29,7 +34,7 @@ const projects:Project[] = [
 		type: 'Web App',
 		colorClass: 'tile-yellow-pink',
 		image: {
-			srcPath: "/barchart-svgrepo-com.svg",
+			srcPath: stocks,
 			altText: "chart.svg"
 		}
 	}, 
@@ -39,7 +44,7 @@ const projects:Project[] = [
 		type: 'Web App',
 		colorClass: 'tile-blue-pink',
 		image: {
-			srcPath: "/github-svgrepo-com.svg",
+			srcPath: github,
 			altText: "github.svg"
 		}
 	}, 
@@ -49,7 +54,7 @@ const projects:Project[] = [
 		type: 'CSS/SVG',
 		colorClass: 'tile-lightblue-pink',
 		image: {
-			srcPath: "/gif-svgrepo-com.svg",
+			srcPath: animations,
 			altText: "gif-icon.svg"
 		}
 	}

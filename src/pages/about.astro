@@ -1,5 +1,6 @@
 ---
 import Layout from "../layouts/Layout.astro";
+import headPic from "/sam-pic.webp"
 
 export const description:string = "About Sam: Full Stack Developer at IBM"
 
@@ -12,7 +13,7 @@ export const keywords:string = "samuel steinberg, sam steinberg, sam steinberg d
     <div class="main-container">
       <div class="img-container">
         <img
-          src="/sam-pic.jpeg"
+          src={headPic}
           alt="sam picture.jpeg"
           height="auto"
           width="50%"

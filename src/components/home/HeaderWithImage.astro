@@ -1,10 +1,10 @@
 ---
-
+import astronaut from "/astronaut-svgrepo-com.svg";
 ---
 
 <div class="main-container">
     <div class="header">
-        <h1 class="text-center">Hi, I'm Sam. Welcome to my site.</h1>
+        <h1 class="text-center">Hi, I'm Sam. <span class="text-gradient">Welcome to my site.</span></h1>
         <div class="subheader-container subheader text-center">
             <p>
                 I am a full-stack developer based in Austin, TX.
@@ -14,7 +14,7 @@
         </div>
     </div>
     <div class="img-container">
-        <img src="/astronaut-svgrepo-com.svg" alt="spacesuit.jpg" class="img-dimensions" />
+        <img src={astronaut} alt="spacesuit.jpg" class="img-dimensions" />
     </div>
 </div>
 
@@ -24,6 +24,28 @@
 	:root {
 		--astro-gradient: linear-gradient(0deg, #4f39fa, #da62c4);
 	}
+
+	.text-gradient {
+		font-weight: 900;
+		background-image: var(--astro-gradient);
+		-webkit-background-clip: text;
+		-webkit-text-fill-color: transparent;
+		background-size: 100% 200%;
+		background-position-y: 100%;
+		border-radius: 0.4rem;
+		animation: pulse 4s ease-in-out infinite;
+	}
+
+	@keyframes pulse {
+		0%,
+		100% {
+			background-position-y: 0%;
+		}
+		50% {
+			background-position-y: 80%;
+		}
+	}
+
 
 	.main-container {
 		@include flex-box(column, wrap, center, center);
