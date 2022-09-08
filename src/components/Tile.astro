@@ -1,11 +1,11 @@
 ---
-import type Project from '../models/Project';
+import type ProjectTile from '../models/ProjectTile';
 
 export interface Props {
-	project:Project
+	project:ProjectTile
 }
 
-const { project: { title, route, type, colorClass, image } } = Astro.props;
+const { project: { title, route, type, colorClass, image, textColor ="#4f39fa" } } = Astro.props;
 ---
 
 <a class={`link-tile ${colorClass}`} href={route}>
@@ -17,7 +17,7 @@ const { project: { title, route, type, colorClass, image } } = Astro.props;
 		<img src={image.srcPath} alt={image.altText} class="img" />
 	</div>
 </a>
-<style lang="scss">
+<style lang="scss" define:vars={{ textColor }}>
 	@import '../styles/abstracts.scss';
 	.link-tile {
 		@include flex-box(column, nowrap, normal, normal);
@@ -96,7 +96,7 @@ const { project: { title, route, type, colorClass, image } } = Astro.props;
 	}
 
 	.link-tile:is(:hover, :focus-within) h2 {
-		color: #4f39fa;
+		color: var(--textColor);
 	}
 
 	.link-tile:is(:hover, :focus-within) h2 span {

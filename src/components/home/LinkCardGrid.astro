@@ -1,5 +1,5 @@
 ---
-import type Project from "../../models/Project";
+import type ProjectTile from "../../models/ProjectTile";
 import Tile from "../Tile.astro";
 import truck from "/truck-svgrepo-com.svg"
 import restaurant from "/restaurant-plate-svgrepo-com.svg"
@@ -7,7 +7,8 @@ import stocks from "/barchart-svgrepo-com.svg"
 import github from "/github-svgrepo-com.svg"
 import animations from "/gif-svgrepo-com.svg"
 
-const projects:Project[] = [
+
+const projects:ProjectTile[] = [
 	{
 		title: "a2z",
 		route: '/project/a2z',
@@ -16,7 +17,8 @@ const projects:Project[] = [
 		image: {
 			srcPath: truck,
 			altText: "truck.svg"
-		}
+		},
+		textColor: "#fff"
 	},
 	{
 		title: "rAdmin",
@@ -26,7 +28,8 @@ const projects:Project[] = [
 		image: {
 			srcPath: restaurant,
 			altText: "restaurant front.svg"
-		}
+		},
+		textColor: "#964B00"
 	}, 
 	{
 		title: "StockTrace",
@@ -36,7 +39,8 @@ const projects:Project[] = [
 		image: {
 			srcPath: stocks,
 			altText: "chart.svg"
-		}
+		},
+		textColor: "#fff"
 	}, 
 	{
 		title: "Github-Personal",
@@ -46,7 +50,8 @@ const projects:Project[] = [
 		image: {
 			srcPath: github,
 			altText: "github.svg"
-		}
+		},
+		textColor: "#000"
 	}, 
 	{
 		title: "Animation Library",
@@ -56,7 +61,8 @@ const projects:Project[] = [
 		image: {
 			srcPath: animations,
 			altText: "gif-icon.svg"
-		}
+		},
+		textColor: "#fff"
 	}
 ]
 
@@ -64,7 +70,7 @@ const projects:Project[] = [
 
 <div class="link-card-grid">
     {
-        projects.map((project:Project) => <Tile project={project} />)
+        projects.map((project:ProjectTile) => <Tile project={project} />)
     }
 </div>
 
