@@ -1,0 +1,74 @@
+---
+import Layout from "../layouts/Layout.astro";
+import nfSrc from '/notfound.svg'
+import OutlineLinkButton from "../components/utility/OutlineLinkButton.astro";
+
+export const links = [
+    { route: "/", title:"My Work" },
+    { route: "/about", title:"About Me" },
+    { route: "/experience", title:"Experience" },
+    { route: "/contact", title:"Contact" },
+]
+---
+
+<Layout title="Page Not Found!" description="" keywords="">
+  <main>
+    <div class="img-container">
+        <img src={nfSrc} alt="not found svg" width="100%" height="auto" />
+    </div>
+    <div class="info">
+        <p>This page doesn't exist! Lets get you back...</p>
+        <div class="link-btns">
+            { links.map(link => (
+                <div class="btn-container">
+                    <OutlineLinkButton route={link.route} title={link.title} target="_self" />
+                </div>
+            )) }
+        </div>
+    </div>
+  </main>
+</Layout>
+
+<style lang="scss">
+  @import "../styles/abstracts.scss";
+  main {
+    @include flex-box(column, wrap, flex-start, center);
+    padding-top: 5rem;
+    background-color: color("primary");
+    height: 100vh;
+  }
+
+  .info { padding: 1rem }
+
+  .btn-container {
+    padding: .25rem
+  }
+
+  .img-container {
+    width: 100px;
+    max-width: 200px
+  }
+
+  p {
+    color: white;
+    text-align: center
+  }
+
+  .link-btns {
+    @include flex-box(row, wrap, center, center);
+  }
+
+  @media screen and (min-width: screen("md")) {
+    .img-container {
+        width: 200px
+    }
+
+    main {
+        @include flex-box(column, wrap, center, center);
+        background-color: color("primary");
+        height: 100vh;
+        padding-top: 0;
+    }
+  }
+
+</style>
