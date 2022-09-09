@@ -8,3 +8,17 @@
 .active {
     color: lightblue
 }
+
+.dropdown-menu {
+    width: 75%;
+    margin-left: 10px;
+    color: white !important;
+    background-color: color("primary") !important;
+    a {
+        color: white;
+        width: 75%;
+        max-width: 150px;
+        margin-left: 10px;
+        border-bottom: 1px solid white;
+    }
+}

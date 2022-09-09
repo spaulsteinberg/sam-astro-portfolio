@@ -57,7 +57,7 @@ import astronaut from "/astronaut-svgrepo-com.svg";
 
 	.img-container {
 		@include flex-box(column, wrap, center, center);
-		padding: 1rem;
+		padding: 0;
 		padding-bottom: 3rem;
 	}
 
@@ -85,6 +85,12 @@ import astronaut from "/astronaut-svgrepo-com.svg";
 	h1 {
 		margin-top: 2rem;
 		margin-bottom: 0;
+	}
+
+	@media screen and (min-width: screen("xs")) {
+		.img-container {
+			padding: 1rem;
+		}
 	}
 
 	@media screen and (min-width: screen("sm")) {

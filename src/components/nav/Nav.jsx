@@ -3,10 +3,6 @@ import "./Nav.scss"
 
 const NAV_LINKS = [
     {
-        route: "/",
-        title: "Work"
-    },
-    {
         route: "/about",
         title: "About"
     },
@@ -17,6 +13,33 @@ const NAV_LINKS = [
     {
         route: "/contact",
         title: "Contact"
+    }
+]
+
+const DROPDOWN_NAV_LINKS = [
+    {
+        route: "/project/a2z",
+        title: "a2z"
+    },
+    {
+        route: "/project/rAdmin",
+        title: "rAdmin"
+    },
+    {
+        route: "/project/stocktrace",
+        title: "StockTrace"
+    },
+    {
+        route: "/project/github-personal",
+        title: "Github Stats"
+    },
+    {
+        route: "/project/animations",
+        title: "SVG Animations"
+    },
+    {
+        route: "/project/portfolio",
+        title: "Portfolio"
     }
 ]
 
@@ -49,6 +72,17 @@ const Nav = () => {
 
             <div id="navbarSupportedContent" className="collapse navbar-collapse">
                 <ul class="navbar-nav mr-auto">
+                    <NavLinkItem route="/" title="Home" />
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle nav-link text-white px-4" href="/" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Projects
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            {
+                                DROPDOWN_NAV_LINKS.map(link => <a class="dropdown-item" href={link.route}>{link.title}</a>)
+                            }
+                        </div>
+                    </li>
                     {
                         NAV_LINKS.map(link => <NavLinkItem key={link.title} route={link.route} title={link.title} />)
                     }
