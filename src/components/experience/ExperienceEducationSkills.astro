@@ -4,52 +4,58 @@
 <div class="education-skills-container">
   <div class="inner-container">
     <h2>Education</h2>
-  <p>University of Tennessee - B.S. Computer Science, Minor in Cybersecurity</p>
-  <h2>Libraries and Languages</h2>
-  <h5>Programming Languages</h5>
-  <p>TypeScript, JavaScript, JSX, Python, C#, C++, C, HTML5, CSS3, PHP, Java</p>
-  <h5>Libraries and Frameworks</h5>
-  <p>
-    Angular, React.js, React Native, Vue.js, Next.js, JQuery, Node.js,
-    Express.js, .NET Core, Selenium Webdriver, Spring Boot
-  </p>
-  <h5>Databases and Tools</h5>
-  <p>MongoDB, Firebase, SQL, RabbitMQ</p>
+    <p>
+      University of Tennessee - B.S. Computer Science, Minor in Cybersecurity
+    </p>
+    <h2>Libraries and Languages</h2>
+    <h5>Programming Languages</h5>
+    <p>
+      TypeScript, JavaScript, JSX, Python, C#, C++, C, HTML5, CSS3, PHP, Java
+    </p>
+    <h5>Libraries and Frameworks</h5>
+    <p>
+      Angular, React.js, React Native, Vue.js, Next.js, JQuery, Node.js,
+      Express.js, .NET Core, Selenium Webdriver, Spring Boot
+    </p>
+    <h5>Databases and Tools</h5>
+    <p>MongoDB, Firebase, SQL, RabbitMQ</p>
   </div>
 </div>
 
 <style lang="scss">
-    @import '../../styles/abstracts.scss';
+  @import "../../styles/abstracts.scss";
 
+  .inner-container {
+    @include flex-box(column, wrap, flex-start, center);
+    background-color: color("primary-light");
+    height: 100%;
+    width: 100%;
+    flex-grow: 1;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 1rem;
+    text-align: center;
+  }
+
+  .education-skills-container {
+    padding: 6rem 1rem;
+  }
+
+  h2 {
+    text-decoration: underline;
+  }
+
+  h5 {
+    margin-top: 1rem !important;
+    color: whitesmoke;
+  }
+  p {
+    color: whitesmoke;
+  }
+
+  @media screen and (min-width: screen("sm")) {
     .inner-container {
-      @include flex-box(column, wrap, flex-start, center);
-      background-color: color("primary-light");
-      height: 100%;
-      width: 100%;
-      flex-grow: 1;
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 1rem;
-      text-align: center;
+      padding: 2rem;
     }
-
-    .education-skills-container {
-      padding: 6rem 1rem;
-    } 
-
-    h2 {
-        text-decoration: underline;
-    }
-
-    h5 { 
-        margin-top: 1rem !important;
-        color: whitesmoke
-    }
-    p {
-        color: whitesmoke
-    }
-
-    @media screen and (min-width: screen("sm")) {
-      .inner-container { padding: 2rem }
-    }
+  }
 </style>
