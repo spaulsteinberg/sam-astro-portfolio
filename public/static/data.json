@@ -67,5 +67,19 @@
             "description": "Relatively complex and creative animations.",
             "keywords": "sam steinberg projects, samuel steinberg projects, projects, sam steinberg, sam steinberg animations"
         }
+    },
+    "portfolio": {
+        "title": "Portfolio",
+        "description": "Being in need of a new portfolio, I knew it could be a great opportunity to try Astro. As of this writing, it is a new framwork that uses islands architecture and has some incredible flexibility. Writing this project was a blast, and a great excuse to scratch the surface of this technology!",
+        "image": {
+            "srcPath": "/astronaut-svgrepo-com.svg",
+            "altText": "astronaut"
+        },
+        "technology": ["Astro", "TypeScript"],
+        "githubLink": "https://github.com/spaulsteinberg/sam-astro-portfolio",
+        "seo": {
+            "description": "Portfolio written in Astro to showcase my projects and experience",
+            "keywords": "sam steinberg projects, samuel steinberg projects, projects, sam steinberg, sam steinberg astro"
+        }
     }
 }

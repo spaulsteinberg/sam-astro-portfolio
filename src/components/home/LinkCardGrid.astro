@@ -6,6 +6,7 @@ import restaurant from "/restaurant-plate-svgrepo-com.svg"
 import stocks from "/barchart-svgrepo-com.svg"
 import github from "/github-svgrepo-com.svg"
 import animations from "/gif-svgrepo-com.svg"
+import astronaut from "/astronaut-svgrepo-com.svg"
 
 
 const projects:ProjectTile[] = [
@@ -61,6 +62,17 @@ const projects:ProjectTile[] = [
 		image: {
 			srcPath: animations,
 			altText: "gif-icon.svg"
+		},
+		textColor: "#fff"
+	}, 
+	{
+		title: "Portfolio",
+		route: '/project/portfolio',
+		type: 'Web',
+		colorClass: 'tile-purple-red',
+		image: {
+			srcPath: astronaut,
+			altText: "astronaut.svg"
 		},
 		textColor: "#fff"
 	}
