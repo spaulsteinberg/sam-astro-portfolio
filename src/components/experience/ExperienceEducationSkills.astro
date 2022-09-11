@@ -1,24 +1,31 @@
 ---
+
+const languages:string[] = ['TypeScript', 'JavaScript', 'JSX', 'Python', 'C#', 'C++', 'C', 'HTML5', 'CSS3', 'PHP', 'Java']
+const framworksAndLibraries:string[] = ['Angular', 'React.js', 'React Native', 'Vue.js', 'Next.js', 'Node.js', 'Express.js', '.NET Core', 'Selenium Webdriver', 'Spring Boot']
+const dbAndTools:string[] = [ 'MongoDB', 'Firebase', 'MySQL', 'RabbitMQ']
+
+export { languages, framworksAndLibraries, dbAndTools }
 ---
 
 <div class="education-skills-container">
   <div class="inner-container">
     <h2>Education</h2>
     <p>
-      University of Tennessee - B.S. Computer Science, Minor in Cybersecurity
+      University of Tennessee - B.S. Computer Science, Minor in Cybersecurity - Class of 2020
     </p>
     <h2>Libraries and Languages</h2>
     <h5>Programming Languages</h5>
     <p>
-      TypeScript, JavaScript, JSX, Python, C#, C++, C, HTML5, CSS3, PHP, Java
+      { languages.join(", ") }
     </p>
     <h5>Libraries and Frameworks</h5>
     <p>
-      Angular, React.js, React Native, Vue.js, Next.js, JQuery, Node.js,
-      Express.js, .NET Core, Selenium Webdriver, Spring Boot
+      { framworksAndLibraries.join(", ") }
     </p>
     <h5>Databases and Tools</h5>
-    <p>MongoDB, Firebase, SQL, RabbitMQ</p>
+    <p>
+      { dbAndTools.join(", ") }
+    </p>
   </div>
 </div>
 
