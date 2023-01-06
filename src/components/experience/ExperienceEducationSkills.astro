@@ -9,6 +9,11 @@ export { languages, framworksAndLibraries, dbAndTools }
 
 <div class="education-skills-container">
   <div class="inner-container">
+    <h2>Intellectual Property</h2>
+    <h5 class="patent-group"><span class="patent">U.S. Patent Application Pending</span></h5>
+    <p>
+      Restaurant Management System including a Table Management System, and Methods of Operating Same
+    </p>
     <h2>Education</h2>
     <p>
       University of Tennessee - B.S. Computer Science, Minor in Cybersecurity - Class of 2020
@@ -31,6 +36,19 @@ export { languages, framworksAndLibraries, dbAndTools }
 
 <style lang="scss">
   @import "../../styles/abstracts.scss";
+
+  .patent {
+    @include astro-gradient-text;
+  }
+
+  .patent-name {
+    font-weight: 400;
+  }
+
+  .patent-group {
+    margin-top: 0 !important;
+    margin-bottom: .25rem;
+  }
 
   .inner-container {
     @include flex-box(column, wrap, flex-start, center);
