@@ -27,7 +27,7 @@ export function getStaticPaths() {
     const pathData:PathData[] = []
     for (const id of Object.keys(json)) {
         // need to whitelist here. typescript complains.
-        if (id === "a2z" || id === "rAdmin" || id === "stocktrace" || id === "github-personal" || id === "animations" || id === "portfolio") {
+        if (id === "a2z" || id === "rAdmin" || id === "stocktrace" || id === "github-personal" || id === "animations" || id === "portfolio" || id === "table-management") {
             pathData.push({
                 params: {
                     projectId: id

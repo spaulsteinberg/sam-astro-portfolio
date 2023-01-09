@@ -13,6 +13,20 @@
             "keywords": "sam steinberg projects, samuel steinberg projects, projects, sam steinberg, a2z"
         }
     },
+    "table-management": {
+        "title": "Restaurant Table Management System",
+        "description": "This project illustrates a restaurant table management system that uses NFC tags and readers to streamline certain table management operations, improve turntable optimization, better predict restaurant management metrics such as wait times, and collect more accurate analytics. It can be integrated into popular existing systems, and can be used by any device that is WIFI-enabled, has a NFC reader, and has enough space for the application. There is currently a patent pending for the IP, so the GitHub is private.",
+        "image": {
+            "srcPath": "/project-images/scan-2.jpg",
+            "altText": "scan-here.jpg"
+        },
+        "technology": ["React Native", "TypeScript", "Redux", "Firestore", "Firebase Auth"],
+        "githubLink": "https://github.com/spaulsteinberg/nfc-with-navigation",
+        "seo": {
+            "description": "A Table Management System that saves time, improves turn table optimization, and enhances analytics gathering.",
+            "keywords": "sam steinberg projects, samuel steinberg projects, projects, sam steinberg, table management"
+        }
+    },
     "rAdmin": {
         "title": "rAdmin",
         "description": "This project conceptualizes a business idea: A quick, painless way to allow small businesses to quickly spin off a restaurant website, complete with an online ordering service and an administration tool (Admin tool).This tool controls the content a customer will see in real-time: It's where menus can be created and configured, items to be ordered are customized, and eye-grabbing home screens are be built to the last detail. Additionally, inventory tracking is enabled if a user desires to track it digitally, and the dashboard contains visually appealing and easy to understand charts to view data. All restaurant ordering data is freely available to the users. Its their data, so all of it is available.",
