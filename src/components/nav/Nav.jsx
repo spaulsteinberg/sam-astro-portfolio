@@ -22,6 +22,10 @@ const DROPDOWN_NAV_LINKS = [
         title: "a2z"
     },
     {
+        route: "/project/table-management",
+        title: "RTMS"
+    },
+    {
         route: "/project/rAdmin",
         title: "rAdmin"
     },
