@@ -1,10 +1,19 @@
 ---
+import ExperienceSkillsItem from "./ExperienceSkillsItem.astro"
 
 const languages:string[] = ['TypeScript', 'JavaScript', 'JSX', 'Python', 'C#', 'C++', 'C', 'HTML5', 'CSS3', 'PHP', 'Java']
-const framworksAndLibraries:string[] = ['Angular', 'React.js', 'React Native', 'Vue.js', 'Next.js', 'Node.js', 'Express.js', '.NET Core', 'Selenium Webdriver', 'Spring Boot']
-const dbAndTools:string[] = [ 'MongoDB', 'Firebase', 'MySQL', 'RabbitMQ']
+const frameworksAndLibraries:string[] = ['Angular', 'React.js', 'React Native', 'Vue.js', 'Next.js', 'Node.js', 'Express.js', '.NET Core', 'Selenium Webdriver', 'Spring Boot']
+const dbAndTools:string[] = ['MongoDB', 'MySQL', 'RabbitMQ']
+const cloud:string[] = ['AWS S3', 'Google Cloud Storage', 'Firebase']
 
-export { languages, framworksAndLibraries, dbAndTools }
+const skillCategories = [
+  { title: "Programming Languages", items: languages },
+  { title: "Libraries and Frameworks", items: frameworksAndLibraries },
+  { title: "Cloud", items: cloud },
+  { title: "Databases and Tools", items: dbAndTools },
+]
+
+export { skillCategories }
 ---
 
 <div class="education-skills-container">
@@ -18,19 +27,10 @@ export { languages, framworksAndLibraries, dbAndTools }
     <p>
       University of Tennessee - B.S. Computer Science, Minor in Cybersecurity - Class of 2020
     </p>
-    <h2>Libraries and Languages</h2>
-    <h5>Programming Languages</h5>
-    <p>
-      { languages.join(", ") }
-    </p>
-    <h5>Libraries and Frameworks</h5>
-    <p>
-      { framworksAndLibraries.join(", ") }
-    </p>
-    <h5>Databases and Tools</h5>
-    <p>
-      { dbAndTools.join(", ") }
-    </p>
+    <h2>Technical Skills</h2>
+    {
+      skillCategories.map(skill => <ExperienceSkillsItem title={skill.title} skills={skill.items} />)
+    }
   </div>
 </div>
 

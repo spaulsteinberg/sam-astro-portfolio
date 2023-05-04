@@ -1,0 +1,15 @@
+---
+
+export interface Props {
+    title:string;
+    skills:string[];
+}
+
+const { title, skills } = Astro.props;
+
+---
+
+<h5>{title}</h5>
+<p>
+    { skills.join(", ") }
+</p>
