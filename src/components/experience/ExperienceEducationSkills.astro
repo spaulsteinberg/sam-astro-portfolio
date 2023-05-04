@@ -18,16 +18,16 @@ export { skillCategories }
 
 <div class="education-skills-container">
   <div class="inner-container">
-    <h2>Intellectual Property</h2>
+    <h2 class="header-h2-element">Intellectual Property</h2>
     <h5 class="patent-group"><span class="patent">U.S. Patent Application Pending</span></h5>
     <p>
       Restaurant Management System including a Table Management System, and Methods of Operating Same
     </p>
-    <h2>Education</h2>
+    <h2 class="header-h2-element">Education</h2>
     <p>
       University of Tennessee - B.S. Computer Science, Minor in Cybersecurity - Class of 2020
     </p>
-    <h2>Technical Skills</h2>
+    <h2 class="header-h2-element">Technical Skills</h2>
     {
       skillCategories.map(skill => <ExperienceSkillsItem title={skill.title} skills={skill.items} />)
     }
@@ -78,9 +78,16 @@ export { skillCategories }
     color: whitesmoke;
   }
 
+  .header-h2-element {
+      margin-bottom: 1rem;
+    }
+
   @media screen and (min-width: screen("sm")) {
     .inner-container {
       padding: 2rem;
+    }
+    .header-h2-element {
+      margin-bottom: 1.5rem;
     }
   }
 </style>
