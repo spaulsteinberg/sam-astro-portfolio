@@ -82,7 +82,7 @@ const { job: { image, description, pills }} = Astro.props
 
     @media screen and (min-width: screen("md")) {
         .card {
-            height: 500px;
+            height: 500px !important;
             width: 45%;
             margin: 1rem;
         }
@@ -90,11 +90,4 @@ const { job: { image, description, pills }} = Astro.props
             height: 30%;
         }
     }
-
-    @media screen and (min-width: screen("xl")) {
-        .card {
-            height: 500px;
-        }
-    }
-
 </style>
