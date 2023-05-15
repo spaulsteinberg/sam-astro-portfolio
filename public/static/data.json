@@ -6,7 +6,7 @@
             "srcPath": "/project-images/a2z_map.webp",
             "altText": "a2z photo"
         },
-        "technology": ["Vue.js", "Vuex", "React Native", "Redux", "Firebase Authentication", "Firestore", "Google Maps/Directions/Places API", "Node.js", "Express,js", "Element UI"],
+        "technology": ["Vue.js", "Vuex", "React Native", "Redux", "Firebase Authentication", "Firestore", "Google Maps/Directions/Places API", "GCP Object Storage", "Node.js", "Express,js", "Element UI"],
         "githubLink": "https://github.com/spaulsteinberg/a2z",
         "seo": {
             "description": "a2z offers a middle ground between large-scale freight carriers and friends helping each other move items.",
