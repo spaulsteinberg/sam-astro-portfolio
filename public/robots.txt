@@ -4,4 +4,4 @@ Disallow: /nogooglebot/
 User-agent: *
 Allow: /
 
-Sitemap: https://sam-astro-portfolio.vercel.app/sitemap-0.xml
+Sitemap: https://samuelsteinberg.vercel.app/sitemap-0.xml
