@@ -12,7 +12,7 @@ const { job: { image, description, pills }} = Astro.props
 
 <div class="card">
     <div class="img-container">
-        <img src={image.srcPath} alt={image.altText} width="100%"  />
+        <img src={image.srcPath} alt={image.altText} width="100%" style="max-width: 125px;" />
     </div>
     <div class="description-container">
         <div>
@@ -29,7 +29,7 @@ const { job: { image, description, pills }} = Astro.props
 <style lang="scss">
     @import '../../styles/abstracts.scss';
     .card {
-        height: 500px !important;
+        height: 600px !important;
         width: 100%;
         border: 1px solid #0f172ae6;;
         border-radius: 10px;
@@ -73,7 +73,7 @@ const { job: { image, description, pills }} = Astro.props
         .card {
             width: 70%;
             max-width: 350px;
-            height: 450px !important;
+            height: 610px !important;
         }
         .description-container {
             justify-content: space-between;
@@ -82,7 +82,6 @@ const { job: { image, description, pills }} = Astro.props
 
     @media screen and (min-width: screen("md")) {
         .card {
-            height: 500px !important;
             width: 45%;
             margin: 1rem;
         }
