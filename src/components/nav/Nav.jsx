@@ -3,10 +3,6 @@ import "./Nav.scss"
 
 const NAV_LINKS = [
     {
-        route: "/about",
-        title: "About"
-    },
-    {
         route: "/experience",
         title: "Experience"
     },
