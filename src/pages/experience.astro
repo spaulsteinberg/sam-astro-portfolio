@@ -8,9 +8,14 @@ import type ExperienceTimelineElement from "../models/ExperienceTimelineElement"
 
 const timelineItems: ExperienceTimelineElement[] = [
   {
+    place: "Tesla",
+    role: "Full Stack",
+    yearsPresent: ["23", ""]
+  },
+  {
     place: "IBM",
     role: "Full Stack",
-    yearsPresent: ["21", ""],
+    yearsPresent: ["21", "23"],
   },
   {
     place: "Schwab",
@@ -25,6 +30,14 @@ const timelineItems: ExperienceTimelineElement[] = [
 ];
 
 const jobs:ExperienceJob[] = [
+    {
+        image: {
+            srcPath: '/company/tesla.webp',
+            altText: 'tesla.webp'
+        },
+        description: "Designed, developed, and deployed applications instrumental in delivering dimensional, production, process, and joining data, tracking and metrics to facilitate successful release and ramp of the Cybertruck",
+        pills: ['React', 'JavaScript', 'TypeScript', 'Kafka', 'Three.js', 'AWS S3', 'MongoDB', 'Docker', 'FastAPI', 'SCSS']
+    },
     {
         image: {
             srcPath: '/company/IBM_logo.svg',
